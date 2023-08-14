@@ -18,9 +18,13 @@
   "repository": "https://github.com/idearat/fusionauth-heroku",
   "stack": "container",
   "env": {
+    "JAVA_OPTS": {
+      "description": "Sets JVM heap size for FusionAuth App.",
+      "value": "-Xms1g -Xmx1g -XX:+UseContainerSupport"
+    },
     "ES_JAVA_OPTS": {
       "description": "Sets JVM heap size for Elasticsearch.",
-      "value": "-Xms1g -Xmx1g"
+      "value": "-Xms1g -Xmx1g -XX:+UseContainerSupport"
     },
     "FUSIONAUTH_APP_MEMORY": {
       "description": "The amount of memory to allocate to Java VM where this service will run.",
